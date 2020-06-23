@@ -131,5 +131,3 @@ exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 exec /home/a/.screenlayout/dual.sh
 exec nm-applet
 exec pasystray
-# exec /home/a/.config/i3/update-folder-db.sh
-# exec /home/a/.config/i3/update-file-db.sh
