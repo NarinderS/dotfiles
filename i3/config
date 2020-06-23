@@ -96,6 +96,18 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks
 
+bindsym $mod+r mode "resize"
+mode "resize" 
+{
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+    bindsym i resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 #### KEYBINDINGS END ####
 
 # Windows that have the class "FLOATING" are floating
@@ -119,7 +131,5 @@ exec /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 exec /home/a/.screenlayout/dual.sh
 exec nm-applet
 exec pasystray
-exec picom
-exec hsetroot -solid "#000000"
 # exec /home/a/.config/i3/update-folder-db.sh
 # exec /home/a/.config/i3/update-file-db.sh
