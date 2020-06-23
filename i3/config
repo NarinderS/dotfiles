@@ -22,16 +22,16 @@ bindsym $mod+d exec rofi -modi drun -show drun -font "hack 10" -show-icons
 bindsym $mod+w exec rofi -modi window -show window -font "hack 10" -show-icons
 
 # change focus using cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+i focus up
+bindsym $mod+l focus right
 
 # move focused window using the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+i move up
+bindsym $mod+Shift+l move right
 
 # make window sticky
 bindsym $mod+Shift+s sticky toggle
@@ -116,8 +116,10 @@ for_window [class="FLOATING"] floating enable
 # Windows that have the class "STICKY" are floating and sticky
 for_window [class="STICKY"] floating enable, sticky enable
 
-# windows have no border
-default_border none
+# windows small borders
+client.focused #FFFFFF #FFFFFF #FFFFFF #FFFFFF #00AAFF
+smart_borders on
+new_window pixel 1
 
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
