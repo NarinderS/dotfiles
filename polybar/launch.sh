@@ -11,7 +11,7 @@ killall -q polybar
 # If all your bars have ipc enabled, you can also use 
 # polybar-msg cmd quit
 
-# Launch bar1 and bar2
+# Launch bars. TODO: polybar.log has the potential to fill up /tmp
 echo "---" | tee -a /tmp/polybar.log
 polybar -r $1 >>/tmp/polybar.log 2>&1 &
 
