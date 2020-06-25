@@ -1,6 +1,6 @@
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git zsh_reload)
+plugins=(git zsh_reload zsh-syntax-highlighting zsh-autosuggestions)
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 source $ZSH/oh-my-zsh.sh
@@ -32,3 +32,6 @@ alias c='code $(fd -j 32 -HI . / | fzf --reverse --border)'
 # Powerlevel10k stuff
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# ZSH Syntax highlighting stuff
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)

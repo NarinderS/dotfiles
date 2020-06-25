@@ -1,0 +1,96 @@
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
+screenchange-reload = true
+
+[bar/bspwm]
+bottom = true
+width = 100%
+height = 20
+background = #000000
+foreground = #FFFFFF
+line-size = 1
+line-color = #FFFFFF
+module-margin = 1
+font-0 = Dejavu Sans:size=9;2
+font-1 = Font Awesome 5 Free Solid:pixelsize=9;2
+modules-left = bspwm
+modules-right = pulseaudio cpu RAM swap temp freq ip date
+separator = "|"
+tray-position = right
+wm-restack = bspwm
+enable-ipc = true
+
+[module/bspwm]
+type = internal/bspwm
+label-focused = %name%
+label-focused-foreground = #FFFFFF
+label-focused-background = #333333
+label-focused-underline= #FFFFFF
+label-focused-padding = 2
+label-occupied = %name%
+label-occupied-padding = 2
+label-urgent = %name%!
+label-urgent-foreground = #000000
+label-urgent-background = #FF0000
+label-urgent-underline= #FF0000
+label-urgent-padding = 2
+label-empty = %name%
+label-empty-foreground = #666666
+label-empty-padding = 2
+
+[module/cpu]
+type = internal/cpu
+format-prefix = " "
+label = %percentage:2%%
+
+[module/RAM]
+type = internal/memory
+format-prefix = " "
+label = %percentage_used:2%%
+
+[module/swap]
+type = internal/memory
+format-prefix = " "
+label = %percentage_swap_used:2%%
+
+[module/date]
+type = internal/date
+date = "%a %b %d %Y"
+time = %r
+format-prefix = " " 
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume>
+format-muted = <label-muted>
+label-volume = " %percentage%%"
+label-muted = " MUTE"
+click-right = pavucontrol &
+
+[module/temp]
+type = custom/script
+interval = 1
+exec = ~/.config/polybar/scripts/temp.py
+label = %output%
+format-prefix = " "
+
+[module/ip]
+type = custom/script
+interval = 1
+exec = ~/.config/polybar/scripts/ip.py
+label = %output%
+format-prefix = " "
+
+[module/freq]
+type = custom/script
+interval = 1
+exec = ~/.config/polybar/scripts/freq.py
+label = %output%
+format-prefix = " "
