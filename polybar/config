@@ -17,10 +17,10 @@ foreground = #FFFFFF
 line-size = 1
 line-color = #FFFFFF
 module-margin = 1
-font-0 = Dejavu Sans:size=9;2
+font-0 = DejaVu Sans:size=9;2
 font-1 = Font Awesome 5 Free Solid:pixelsize=9;2
 modules-left = bspwm
-modules-right = pulseaudio cpu RAM swap temp freq ip date
+modules-right = pulseaudio cpu RAM swap temp freq ip updates date
 separator = "|"
 tray-position = right
 wm-restack = bspwm
@@ -94,3 +94,11 @@ interval = 1
 exec = ~/.config/polybar/scripts/freq.py
 label = %output%
 format-prefix = " "
+
+[module/updates]
+type = custom/script
+interval = 10
+exec = checkupdates | wc -l
+label = Updates: %output%
+format-prefix = " "
+
