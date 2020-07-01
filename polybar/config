@@ -9,6 +9,7 @@ throttle-input-for = 30
 screenchange-reload = true
 
 [bar/bspwm]
+monitor = ${env:MONITOR:}
 bottom = true
 width = 100%
 height = 20

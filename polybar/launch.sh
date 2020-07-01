@@ -13,6 +13,8 @@ killall -q polybar
 
 # Launch bars. TODO: polybar.log has the potential to fill up /tmp
 echo "---" | tee -a /tmp/polybar.log
-polybar -r $1 >>/tmp/polybar.log 2>&1 &
+for m in $(polybar --list-monitors | cut -d":" -f1); do
+    MONITOR=$m polybar -r $1 >>/tmp/polybar.log 2>&1 &
+done
 
 echo "Bars launched..."
