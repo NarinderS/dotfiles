@@ -27,14 +27,14 @@ alias taruc="tar -xvf"
 alias l="ls -X --color=always"
 
 ## fzf (global)
-alias z='cd $(fd -j 32 -HI -t d . / | fzf --reverse --border --preview="ls -alh {} --color")'
-alias x='fd -j 32 -HI . / | fzf --reverse --border --preview="ls -alh {} --color" | xclip -selection c'
-alias c='code $(fd -j 32 -HI . / | fzf --reverse --border)'
+alias Z='cd $(fd -j 32 -HI -t d . / | fzf --reverse --border --preview="ls -alh {} --color")'
+alias X='fd -j 32 -HI . / | fzf --reverse --border --preview="ls -alh {} --color" | xclip -selection c'
+alias C='code $(fd -j 32 -HI . / | fzf --reverse --border)'
 
 ## fzf (local)
-# alias a='cd $(fd -j 32 -HI -t d . . | fzf --reverse --border --preview="ls -al {} --color")'
-# alias s='fd -j 32 -HI . . | fzf --reverse --border | xclip -selection c'
-# alias d='code $(fd -j 32 -HI . . | fzf --reverse --border)'
+alias z='cd $(fd -j 32 -HI -t d . ${HOME} | fzf --reverse --border --preview="ls -alh {} --color")'
+alias x='fd -j 32 -HI . ${HOME} | fzf --reverse --border --preview="ls -alh {} --color" | xclip -selection c'
+alias c='code $(fd -j 32 -HI . ${HOME} | fzf --reverse --border)'
 
 # Powerlevel10k stuff
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
