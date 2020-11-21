@@ -30,15 +30,15 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-### COMMON
+# Java UIs mess up in BSPWM	
+export _JAVA_AWT_WM_NONREPARENTING=1
+xsetroot -cursor_name left_ptr
+
+sxhkd &
 mate-power-manager &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 nm-applet &
+${HOME}/.config/polybar/launch.py &
 
-### BSPWM
-${HOME}/.config/polybar/launch.py
-export _JAVA_AWT_WM_NONREPARENTING=1
-xsetroot -cursor_name left_ptr
-sxhkd &
 exec bspwm

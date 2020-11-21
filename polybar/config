@@ -7,31 +7,6 @@ throttle-output = 5
 throttle-output-for = 10
 screenchange-reload = true
 
-#################
-### QTILE BAR ###
-#################
-[bar/qtile]
-monitor = ${env:MONITOR:}
-pin-workspaces = true
-bottom = true
-width = 100%
-height = 20
-background = #000000
-foreground = #FFFFFF
-line-size = 1
-line-color = #FFFFFF
-module-margin = 1
-font-0 = DejaVu Sans:size=9;2
-font-1 = Font Awesome 5 Free Solid:pixelsize=9;2
-modules-left = ewmh
-modules-right = pulseaudio cpu RAM swap temp freq ip updates date
-separator = "|"
-tray-position = right
-enable-ipc = true
-
-#################
-### BSPWM BAR ###
-#################
 [bar/bspwm]
 monitor = ${env:MONITOR:}
 pin-workspaces = false
@@ -52,11 +27,6 @@ tray-position = right
 wm-restack = bspwm
 enable-ipc = true
 
-###############
-### MODULES ###
-###############
-
-; BSPM Workspace Module
 [module/bspwm]
 type = internal/bspwm
 label-focused = %name%
@@ -70,25 +40,6 @@ label-urgent = %name%!
 label-urgent-foreground = #000000
 label-urgent-background = #FF0000
 label-urgent-underline= #FF0000
-label-urgent-padding = 2
-label-empty = %name%
-label-empty-foreground = #666666
-label-empty-padding = 2
-
-; QTILE Workspace Module
-[module/ewmh]
-type = internal/xworkspaces
-label-active =  %name%
-label-active-foreground = #FFFFFF
-label-active-background = #333333
-label-active-underline= #FFFFFF
-label-active-padding = 2
-label-occupied = %name%
-label-occupied-padding = 2
-label-urgent = %name%
-label-urgent-foreground = #000000
-label-urgent-background = #FF0000
-label-urgent-underline = #FF0000
 label-urgent-padding = 2
 label-empty = %name%
 label-empty-foreground = #666666
