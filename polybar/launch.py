@@ -15,6 +15,7 @@ subprocess.run(['killall', '-q', 'polybar'])
 with open("/tmp/polybar.log", 'a') as out:
     out.write("---------\n")
     out.write(f"Launching Polybar {time.asctime()}\n")
-    for i, m in enumerate(monitorList()):    
+    for i, m in enumerate(monitorList()):
+        print(m)
         subprocess.Popen(['polybar', '-r', 'bspwm'], env=dict(os.environ, MONITOR=m), stdout=out, stderr=out)
     out.write(f"Bars launched\n")
