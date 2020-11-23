@@ -36,9 +36,11 @@ alias z='cd $(fd -j 32 -HI -t d . ${HOME} | fzf --reverse --border --preview="ls
 alias x='fd -j 32 -HI . ${HOME} | fzf --reverse --border --preview="ls -alh {} --color" | xclip -selection c'
 alias c='code $(fd -t f -j 32 -HI . ${HOME} | fzf --reverse --border)'
 
-# Powerlevel10k stuff
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# kitten terminal icat
+alias icat="kitty +kitten icat"
 
 # ZSH Syntax highlighting stuff
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

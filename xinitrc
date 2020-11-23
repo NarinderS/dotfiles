@@ -36,7 +36,7 @@ xsetroot -cursor_name left_ptr
 
 sxhkd &
 mate-power-manager &
-/usr/lib/xfce4/notifyd/xfce4-notifyd &
+dunst &
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 nm-applet &
 ${HOME}/.config/polybar/launch.py &
