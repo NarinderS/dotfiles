@@ -18,3 +18,4 @@ bspc config initial_polarity second_child
 
 bspc config focused_border_color "#00AAFF"
 
+bspc rule -a FLOATING state=floating

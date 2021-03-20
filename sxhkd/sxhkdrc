@@ -10,6 +10,10 @@ super + Return
 super + d
 	rofi -modi drun -show drun -font "hack 10" -show-icons
 
+# window switcher
+super + w
+    ${HOME}/.config/sxhkd/quick_term.py "${HOME}/.config/sxhkd/window_select.py"
+
 # make sxhkd reload its configuration files and restart bspwm:
 super + shift + r
 	pkill -USR1 -x sxhkd; \
@@ -83,7 +87,7 @@ super + {o,i}
 
 # focus given desktop
 super + {1-9,0}
-	${HOME}/.config/sxhkd/focus-desktop.py '{1-9,10}'
+	${HOME}/.config/sxhkd/focus_desktop.py '{1-9,10}'
 
 # send to the given desktop
 super + shift + {1-9,0}

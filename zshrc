@@ -14,17 +14,17 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 ## pacman
-alias pacs="sudo pacman -S"
-alias pacss="sudo pacman -Ss"
-alias pacsyu="sudo pacman -Syu"
-alias pacrs="sudo pacman -Rs"
+alias pin="sudo pacman -S"
+alias pse="sudo pacman -Ss"
+alias pup="sudo pacman -Syu"
+alias prm="sudo pacman -Rs"
 
 ## tar
 alias tarc="tar -cvaf"
 alias taruc="tar -xvf"
 
 ## ls
-alias l="ls -X --color=always"
+alias ls="exa -F --color=always"
 
 ## fzf (global)
 alias Z='cd $(fd -j 32 -HI -t d . / | fzf --reverse --border --preview="ls -alh {} --color")'
@@ -39,8 +39,12 @@ alias c='code $(fd -t f -j 32 -HI . ${HOME} | fzf --reverse --border)'
 # kitten terminal icat
 alias icat="kitty +kitten icat"
 
+# datetime
+alias datetime='date +"%Y_%m_%d_%I_%M_%p"'
+
 # ZSH Syntax highlighting stuff
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [ -e /home/a/.nix-profile/etc/profile.d/nix.sh ]; then . /home/a/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
