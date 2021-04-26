@@ -64,8 +64,7 @@ label = %percentage_swap_used:2%%
 type = internal/date
 date = "%a %b %d %Y"
 time = %r
-format-prefix = " " 
-label = %date% %time%
+label =  %date% |  %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
